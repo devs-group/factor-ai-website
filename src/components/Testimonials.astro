@@ -1,0 +1,103 @@
+---
+const testimonials = [
+  { quote: 'Seit ich bei FactorAI bin, hat sich mein Netzwerk komplett verändert. Der Austausch mit den anderen Tech‑Unternehmern ist unbezahlbar.', name: 'Marco T.', role: 'IT Consultant' },
+  { quote: 'Endlich ein Workspace, der zu meinem Workflow passt. Die Ruhe im Einzelbüro kombiniert mit der Community in der Küche: perfekt.', name: 'Lena K.', role: 'Marketing Strategin' },
+  { quote: 'Die All‑Inclusive‑Miete macht es so einfach. Einziehen und loslegen, keine versteckten Kosten.', name: 'David R.', role: 'KI Entwickler' },
+  { quote: '300 Meter zum Bahnhof, Jura‑Kaffee inklusive und Blick auf die Berge. Was will man mehr?', name: 'Sandra W.', role: 'Freelance Designerin' },
+];
+---
+
+<section class="testimonials section">
+  <div class="container">
+    <p class="label">Stimmen</p>
+    <h2 class="testimonials-title">Was unsere Community sagt</h2>
+    <div class="testimonials-grid">
+      {testimonials.map(t => (
+        <div class="testimonial-card">
+          <div class="quote-mark">"</div>
+          <p class="quote">{t.quote}</p>
+          <div class="author">
+            <div class="author-avatar">{t.name[0]}</div>
+            <div>
+              <p class="author-name">{t.name}</p>
+              <p class="author-role">{t.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .testimonials-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 56px;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--color-gray-100);
+    border-radius: var(--radius-md);
+    padding: 36px;
+    position: relative;
+  }
+  .quote-mark {
+    font-size: 64px;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: 0.4;
+  }
+  .quote {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-black);
+    margin-bottom: 24px;
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .author-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-black);
+  }
+  .author-role {
+    font-size: 13px;
+    color: var(--color-gray-500);
+  }
+  @media (max-width: 768px) {
+    .testimonials-title { font-size: 28px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+</style>

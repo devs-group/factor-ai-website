@@ -1,0 +1,103 @@
+---
+---
+
+<section class="hero" id="hero">
+  <div class="hero-inner container">
+    <div class="hero-content">
+      <p class="hero-label">Coworking · Private Offices · Community</p>
+      <h1>Dein High‑Tech Workspace in Chur Nord.</h1>
+      <p class="hero-sub">Der Maker Place am Stelleweg 4 für KI‑affine Unternehmer/innen. Arbeite in einer produktiven Community aus Tech‑Experten und Visionären.</p>
+      <div class="hero-actions">
+        <a href="#mietgesuch" class="btn btn-primary">Workspace anfragen</a>
+        <a href="#pricing" class="btn btn-outline-light">Besichtigung vereinbaren</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-main">
+        <img src="/images/coworking-space.jpg" alt="FactorAI Coworking Space mit Bergblick" />
+      </div>
+      <div class="hero-img-grid">
+        <img src="/images/office-montalin.jpg" alt="Einzelbüro Montalin" />
+        <img src="/images/kitchen.jpg" alt="Voll ausgestattete Küche" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: var(--color-dark);
+    padding: 80px 24px 100px;
+    overflow: hidden;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: 24px;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+    max-width: 440px;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-img-main {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .hero-img-main img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .hero-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .hero-img-grid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+  }
+  @media (max-width: 1024px) {
+    h1 { font-size: 42px; }
+  }
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    h1 { font-size: 34px; }
+    .hero-img-main img { height: 220px; }
+    .hero-img-grid img { height: 120px; }
+  }
+</style>

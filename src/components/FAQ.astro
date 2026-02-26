@@ -1,0 +1,90 @@
+---
+const faqs = [
+  { q: 'Was ist FactorAI?', a: 'FactorAI ist ein High‑Tech Coworking Space in Chur Nord am Stelleweg 4. Wir bieten Fix‑Desks und private Einzelbüros für KI‑affine Unternehmer/innen in einer produktiven Community.' },
+  { q: 'Für wen ist FactorAI geeignet?', a: 'Für KI‑affine Unternehmer/innen, IT‑Consultants, Freelancer und Tech‑Teams, die einen professionellen Workspace mit Gleichgesinnten suchen.' },
+  { q: 'Was ist in der Miete enthalten?', a: 'Alle Preise sind All‑Inclusive: Möbel, Strom, Internet, Reinigung der Gemeinschaftsräume, Küchenbenutzung und Jura‑Kaffee (Bohnen inkl.). Beim Einzelbüro ist zusätzlich die Meeting‑Room‑Nutzung inklusive.' },
+  { q: 'Wie flexibel sind die Verträge?', a: 'Der Fix‑Desk im Gemeinschaftsbüro hat eine Kündigungsfrist von nur einem Monat. Die Einzelbüros haben eine Kündigungsfrist von 3 Monaten. Kaution ist jeweils 1 Monatsmiete.' },
+  { q: 'Kann ich eine Besichtigung machen?', a: 'Natürlich! Nutze das Mietgesuch‑Formular unten und gib deinen Wunschtermin für eine Besichtigung an. Wir melden uns umgehend.' },
+  { q: 'Wie ist die Lage?', a: 'Chur Nord: 300m zum Bahnhof, 200m zu Coop/Fust/Apotheke und nur 10m zum nächsten Restaurant. Ideal erreichbar mit ÖV und Auto.' },
+];
+---
+
+<section class="faq section section-dark" id="faq">
+  <div class="container">
+    <p class="label">FAQ</p>
+    <h2 class="faq-title">Häufig gestellte Fragen</h2>
+    <div class="faq-list">
+      {faqs.map(faq => (
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>{faq.q}</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p class="faq-answer">{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .faq-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 56px;
+  }
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .faq-item {
+    border: 1px solid var(--color-dark-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-dark-surface);
+  }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-white);
+    list-style: none;
+  }
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+  .faq-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    color: var(--color-primary);
+  }
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+  }
+  @media (max-width: 768px) {
+    .faq-title { font-size: 28px; }
+  }
+</style>

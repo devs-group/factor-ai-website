@@ -1,0 +1,114 @@
+---
+const navLinks = [
+  { text: 'Community', href: '#community' },
+  { text: 'Workspaces', href: '#pricing' },
+  { text: 'Ausstattung', href: '#ausstattung' },
+  { text: 'FAQ', href: '#faq' },
+  { text: 'Mietgesuch', href: '#mietgesuch' },
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <a href="/" class="footer-logo">FactorAI</a>
+        <p class="footer-address">Stelleweg 4, 7000 Chur Nord</p>
+        <p class="footer-network">Vernetzung: Wir empfehlen das lokale Netzwerk <a href="https://raschin.ch" target="_blank" rel="noopener">raschin</a>.</p>
+      </div>
+      <nav class="footer-nav">
+        {navLinks.map(link => (
+          <a href={link.href}>{link.text}</a>
+        ))}
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FactorAI · Chur Nord, Schweiz</p>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-dark);
+    border-top: 1px solid var(--color-dark-border);
+    padding: 48px 24px;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  .footer-logo {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .footer-address {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+  .footer-network {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+  .footer-network a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  .footer-nav {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-nav a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    transition: color 0.2s;
+  }
+  .footer-nav a:hover {
+    color: var(--color-primary);
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-dark-border);
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+  .footer-legal {
+    display: flex;
+    gap: 16px;
+  }
+  .footer-legal a {
+    color: rgba(255,255,255,0.3);
+    transition: color 0.2s;
+  }
+  .footer-legal a:hover {
+    color: var(--color-primary);
+  }
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      gap: 32px;
+    }
+    .footer-nav {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
+  }
+</style>

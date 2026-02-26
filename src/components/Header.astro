@@ -1,0 +1,143 @@
+---
+const navLinks = [
+  { text: 'Community', href: '#community' },
+  { text: 'Workspaces', href: '#pricing' },
+  { text: 'Ausstattung', href: '#ausstattung' },
+  { text: 'FAQ', href: '#faq' },
+];
+---
+
+<header class="header">
+  <div class="header-inner container">
+    <a href="/" class="logo">
+      <span class="logo-text">FactorAI</span>
+    </a>
+    <nav class="nav-desktop">
+      {navLinks.map(link => (
+        <a href={link.href} class="nav-link">{link.text}</a>
+      ))}
+    </nav>
+    <a href="#mietgesuch" class="btn btn-primary nav-cta">Workspace anfragen</a>
+    <button class="hamburger" aria-label="Menu" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="nav-mobile">
+    {navLinks.map(link => (
+      <a href={link.href} class="nav-link-mobile">{link.text}</a>
+    ))}
+    <a href="#mietgesuch" class="btn btn-primary" style="width: 100%; justify-content: center;">Workspace anfragen</a>
+  </nav>
+</header>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  hamburger?.addEventListener('click', () => {
+    navMobile?.classList.toggle('open');
+    hamburger?.classList.toggle('active');
+  });
+  document.querySelectorAll('.nav-link-mobile').forEach(link => {
+    link.addEventListener('click', () => {
+      navMobile?.classList.remove('open');
+      hamburger?.classList.remove('active');
+    });
+  });
+</script>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-dark-border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-text {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+  }
+  .nav-desktop {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    transition: color 0.2s;
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+  .nav-cta {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: var(--color-white);
+    transition: all 0.3s;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background: var(--color-dark);
+    border-top: 1px solid var(--color-dark-border);
+  }
+  .nav-mobile.open {
+    display: flex;
+  }
+  .nav-link-mobile {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    color: rgba(255,255,255,0.6);
+  }
+  @media (max-width: 768px) {
+    .nav-desktop, .nav-cta {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>

@@ -1,0 +1,213 @@
+---
+---
+
+<section class="pricing section section-dark" id="pricing">
+  <div class="container">
+    <p class="label">Dein Workspace</p>
+    <h2 class="pricing-title">Drei Wege zum Erfolg</h2>
+    <p class="pricing-sub">Wähle die Option, die am besten zu deinem Business passt. Alle Preise sind All‑Inclusive‑Mieten: Strom, Internet, Reinigung und Möbel inklusive.</p>
+    <div class="pricing-grid">
+      <!-- Fix-Desk -->
+      <div class="pricing-card">
+        <div class="card-image">
+          <img src="/images/coworking-space.jpg" alt="Fix-Desk im Gemeinschaftsbüro" />
+        </div>
+        <div class="pricing-body">
+          <h3>Fix‑Desk im 8er‑Büro</h3>
+          <p class="card-desc">Dein eigener, fester Schreibtisch mit bequemem Bürostuhl und abschliessbarem Korpus im grosszügigen Gemeinschaftsbüro. Ideal für den Austausch mit anderen KI‑Unternehmern.</p>
+          <div class="pricing-header">
+            <span class="price">CHF 199</span>
+            <span class="price-period">/Monat (netto)</span>
+          </div>
+          <ul class="features">
+            <li>1 Monat Kündigungsfrist</li>
+            <li>Kaution: 1 Monatsmiete</li>
+            <li>Tisch, Stuhl & Korpus</li>
+            <li>WiFi, Strom, Reinigung inkl.</li>
+            <li>Community & Events</li>
+          </ul>
+          <a href="#mietgesuch" class="btn btn-outline-light pricing-btn">Anfragen</a>
+        </div>
+      </div>
+
+      <!-- Montalin -->
+      <div class="pricing-card featured">
+        <div class="card-badge">Beliebt</div>
+        <div class="card-image">
+          <img src="/images/office-montalin.jpg" alt="Einzelbüro Blick Montalin" />
+        </div>
+        <div class="pricing-body">
+          <h3>Einzelbüro «Blick Montalin»</h3>
+          <p class="card-desc">Dein privates Hauptquartier für Deep Work mit Blick Richtung Montalin. Voll möbliert und sofort bezugsbereit. Meeting‑Room‑Nutzung inklusive.</p>
+          <div class="pricing-header">
+            <span class="price">Ab CHF 599</span>
+            <span class="price-period">/Monat</span>
+          </div>
+          <ul class="features">
+            <li>3 Monate Kündigungsfrist</li>
+            <li>Kaution: 1 Monatsmiete</li>
+            <li>Tisch, Stehlampe & Stuhl</li>
+            <li>Meeting‑Room inklusive</li>
+            <li>Maximale Privatsphäre</li>
+          </ul>
+          <a href="#mietgesuch" class="btn btn-primary pricing-btn">Anfragen</a>
+        </div>
+      </div>
+
+      <!-- Oberland -->
+      <div class="pricing-card">
+        <div class="card-image">
+          <img src="/images/office-oberland.jpg" alt="Einzelbüro Blick Oberland" />
+        </div>
+        <div class="pricing-body">
+          <h3>Einzelbüro «Blick Oberland»</h3>
+          <p class="card-desc">Das Premium‑Upgrade: Unser grösstes Einzelbüro mit inspirierendem Ausblick Richtung Oberland. Perfekt für Unternehmer/innen, die Wert auf Repräsentation und Privatsphäre legen.</p>
+          <div class="pricing-header">
+            <span class="price">Ab CHF 689</span>
+            <span class="price-period">/Monat</span>
+          </div>
+          <ul class="features">
+            <li>3 Monate Kündigungsfrist</li>
+            <li>Kaution: 1 Monatsmiete</li>
+            <li>Voll möbliert & bezugsbereit</li>
+            <li>Meeting‑Room inklusive</li>
+            <li>Gesamte Infrastruktur inkl.</li>
+          </ul>
+          <a href="#mietgesuch" class="btn btn-outline-light pricing-btn">Anfragen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .pricing-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .pricing-sub {
+    text-align: center;
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 56px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .pricing-card {
+    background: var(--color-dark-surface);
+    border: 1px solid var(--color-dark-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212,168,83,0.3);
+  }
+  .pricing-card.featured {
+    border-color: var(--color-primary);
+  }
+  .card-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--color-primary);
+    color: var(--color-dark);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+  .card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .pricing-body {
+    padding: 28px;
+  }
+  .pricing-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--color-white);
+  }
+  .card-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+  }
+  .pricing-header {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-dark-border);
+  }
+  .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .price-period {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+  }
+  .features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .features li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .features li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .pricing-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  @media (max-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+  }
+  @media (max-width: 768px) {
+    .pricing-title { font-size: 28px; }
+  }
+</style>
