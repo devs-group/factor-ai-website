@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Datenschutzerklärung | FactorAI – Maker Place in Chur Nord"
+  description="Datenschutzerklärung von FactorAI. Informationen zur Erhebung und Verarbeitung personenbezogener Daten auf factor-ai.ch."
+>
+  <Header />
+
+  <section class="legal section">
+    <div class="container legal-content">
+      <h1>Datenschutzerklärung</h1>
+
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>
+        <strong>FactorAI</strong><br />
+        Stelleweg 4<br />
+        7000 Chur<br />
+        Schweiz<br />
+        E-Mail: <a href="mailto:FactorAIchur@pm.me">FactorAIchur@pm.me</a>
+      </p>
+
+      <h2>2. Erhebung und Verarbeitung von Daten</h2>
+      <p>Beim Besuch unserer Webseite werden automatisch Informationen allgemeiner Natur erfasst (sog. Server-Logfiles). Diese beinhalten u.&nbsp;a. den verwendeten Browser, das Betriebssystem, den Domainnamen Ihres Internetanbieters, die IP-Adresse sowie Datum und Uhrzeit des Zugriffs.</p>
+      <p>Diese Daten sind nicht bestimmten Personen zuordenbar. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Wir behalten uns vor, diese Daten nachträglich zu prüfen, wenn uns konkrete Anhaltspunkte für eine rechtswidrige Nutzung bekannt werden.</p>
+
+      <h2>3. Kontaktformular</h2>
+      <p>Wenn Sie uns über das Mietgesuch-Formular kontaktieren, werden die von Ihnen angegebenen Daten (Name, Unternehmen, Angaben zum KI-Fokus, Arbeitsalltag, Wunsch-Workspace und Besichtigungstermin) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.</p>
+      <p>Die Datenverarbeitung erfolgt über den Dienst <strong>Netlify</strong> (Netlify Inc., USA). Netlify verarbeitet die Formulardaten gemäss ihrer eigenen Datenschutzrichtlinie. Wir geben diese Daten nicht ohne Ihre Einwilligung an Dritte weiter.</p>
+
+      <h2>4. Cookies</h2>
+      <p>Diese Webseite verwendet keine Tracking-Cookies und keine Analyse-Tools von Drittanbietern. Es werden ausschliesslich technisch notwendige Cookies eingesetzt, soweit dies für den Betrieb der Webseite erforderlich ist.</p>
+
+      <h2>5. Google Fonts</h2>
+      <p>Diese Webseite nutzt Google Fonts zur einheitlichen Darstellung von Schriftarten. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten von Google-Servern. Dabei wird Ihre IP-Adresse an Google übermittelt. Weitere Informationen finden Sie in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>.</p>
+
+      <h2>6. Ihre Rechte</h2>
+      <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Sie haben ausserdem ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.</p>
+      <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.</p>
+
+      <h2>7. SSL-Verschlüsselung</h2>
+      <p>Diese Seite nutzt aus Sicherheitsgründen eine SSL-Verschlüsselung (HTTPS). Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &laquo;http://&raquo; auf &laquo;https://&raquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
+
+      <h2>8. Änderung der Datenschutzerklärung</h2>
+      <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen.</p>
+      <p>Stand: März 2026</p>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal {
+    padding-top: 140px;
+  }
+  .legal-content {
+    max-width: 720px;
+  }
+  .legal-content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .legal-content h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  .legal-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-gray-500);
+    margin-bottom: 16px;
+  }
+  .legal-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .legal-content a:hover {
+    opacity: 0.8;
+  }
+  @media (max-width: 768px) {
+    .legal-content h1 { font-size: 28px; }
+  }
+</style>

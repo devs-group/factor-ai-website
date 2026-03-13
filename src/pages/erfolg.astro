@@ -1,21 +1,14 @@
 ---
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import '../styles/global.css'
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anfrage gesendet | FactorAI</title>
-  <link rel="icon" type="image/svg+xml" href="/images/factorai-logo.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+<BaseLayout
+  title="Anfrage gesendet | FactorAI"
+  description="Vielen Dank für deine Anfrage bei FactorAI. Wir melden uns in Kürze."
+  noindex={true}
+>
   <Header />
 
   <section class="success-section">
@@ -31,8 +24,7 @@ import '../styles/global.css'
   </section>
 
   <Footer />
-</body>
-</html>
+</BaseLayout>
 
 <style>
   .success-section {
@@ -74,7 +66,7 @@ import '../styles/global.css'
   }
   .success-sub {
     font-size: 15px;
-    color: var(--color-gray-400, #999);
+    color: var(--color-gray-500);
     margin-bottom: 32px;
   }
 </style>
