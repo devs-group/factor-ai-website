@@ -5,28 +5,36 @@
   <div class="container">
     <div class="community-grid">
       <div class="community-content">
-        <p class="label">Unsere Community</p>
-        <h2>Innovation & Fokus</h2>
-        <p class="community-text">Wir sind eine Gemeinschaft aus KI‑affinen Unternehmern und Unternehmerinnen. Bei uns triffst du auf IT‑Consultants mit internationalem Fokus und Marketing‑Profis, die die digitale Zukunft gestalten.</p>
-        <p class="community-text">Wir schätzen Ruhe für Deep Work, aber auch den Austausch an der Jura‑Kaffeemaschine.</p>
+        <p class="label">Unsere Vision</p>
+        <h2>Kein Coworking. Ein Maker Place.</h2>
+        <p class="community-text">Vergiss klassische, sterile Grossraumbüros. FactorAI am Stelleweg&nbsp;4 in Chur Nord ist kein gewöhnlicher Coworking-Space. Es ist ein hochspezialisierter &laquo;Maker Place&raquo;, exklusiv zugeschnitten auf KI-affine Unternehmer/innen, IT-Consultants und Tech-Visionäre.</p>
+        <p class="community-text">Wir wissen: Echte Innovation braucht absolute Ruhe für komplexe Aufgaben &ndash; und den kreativen, unkomplizierten Austausch danach. Auf 210&nbsp;m² lichtdurchfluteter Dachgeschossfläche bieten wir dir das perfekte Ökosystem dafür.</p>
         <div class="community-stats">
           <div class="stat">
-            <span class="stat-number">77 m²</span>
-            <span class="stat-label">Workspace</span>
+            <span class="stat-number">210 m²</span>
+            <span class="stat-label">Dachgeschoss</span>
           </div>
           <div class="stat">
-            <span class="stat-number">3</span>
-            <span class="stat-label">Büro‑Optionen</span>
+            <span class="stat-number">4</span>
+            <span class="stat-label">Firmen eingezogen</span>
           </div>
           <div class="stat">
-            <span class="stat-number">300m</span>
-            <span class="stat-label">zum Bahnhof</span>
+            <span class="stat-number">Juni '26</span>
+            <span class="stat-label">Eröffnung</span>
           </div>
         </div>
       </div>
       <div class="community-image">
-        <img src="/images/hallway-meetingroom.jpg" alt="FactorAI Flur und Gemeinschaftsbereich" />
+        <img src="/images/hallway-meetingroom.jpg" alt="FactorAI Dachgeschoss mit Sichtbeton und Echtholz-Parkett" />
       </div>
+    </div>
+
+    <div class="join-banner">
+      <div class="join-content">
+        <h3>Werde Teil der Community</h3>
+        <p>Vier Firmen haben sich bereits bei uns einquartiert. Um echten Austausch und eine starke Dynamik zu garantieren, halten wir unser Ökosystem ganz bewusst in einem exklusiven, persönlichen Rahmen. Gestalte die FactorAI-Community von Anfang an mit und sichere dir jetzt einen der wenigen verbleibenden Plätze!</p>
+      </div>
+      <a href="#mietgesuch" class="btn btn-primary">Platz sichern</a>
     </div>
   </div>
 </section>
@@ -86,6 +94,33 @@
     height: 480px;
     object-fit: cover;
   }
+
+  .join-banner {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: var(--color-dark);
+    border-radius: var(--radius-lg);
+    padding: 40px 48px;
+  }
+  .join-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 8px;
+  }
+  .join-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+    max-width: 640px;
+  }
+  .join-banner .btn {
+    flex-shrink: 0;
+  }
+
   @media (max-width: 768px) {
     .community-grid {
       grid-template-columns: 1fr;
@@ -94,5 +129,12 @@
     .community-content h2 { font-size: 28px; }
     .community-image img { height: 300px; }
     .community-stats { gap: 24px; }
+    .join-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px 24px;
+      gap: 24px;
+    }
+    .join-banner .btn { width: 100%; justify-content: center; }
   }
 </style>

@@ -12,18 +12,19 @@ const navLinks = [
   <div class="container">
     <div class="footer-inner">
       <div class="footer-left">
-        <a href="/" class="footer-logo">FactorAI</a>
+        <a href="/" class="footer-logo" aria-label="FactorAI Startseite">
+          <img src="/images/factorai-logo.svg" alt="FactorAI" class="footer-logo-img" width="131" height="120" />
+        </a>
         <p class="footer-address">Stelleweg 4, 7000 Chur Nord</p>
-<!-- removed -->
       </div>
-      <nav class="footer-nav">
+      <nav class="footer-nav" aria-label="Footer Navigation">
         {navLinks.map(link => (
           <a href={link.href}>{link.text}</a>
         ))}
       </nav>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 FactorAI · Chur Nord, Schweiz</p>
+      <p>&copy; 2026 FactorAI &middot; Chur Nord, Schweiz</p>
       <div class="footer-legal">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
@@ -45,24 +46,17 @@ const navLinks = [
     margin-bottom: 40px;
   }
   .footer-logo {
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--color-primary);
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .footer-logo-img {
+    height: 36px;
+    width: auto;
   }
   .footer-address {
     font-size: 14px;
     color: rgba(255,255,255,0.5);
     margin-bottom: 8px;
-  }
-  .footer-network {
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
-  }
-  .footer-network a {
-    color: var(--color-primary);
-    text-decoration: underline;
   }
   .footer-nav {
     display: flex;

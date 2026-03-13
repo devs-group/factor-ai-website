@@ -1,32 +1,43 @@
 ---
 const features = [
   {
-    icon: '🖥️',
-    title: 'Modernes Setup',
-    desc: '77 m² mit Echtholz‑Parkett, WLAN‑Farblaser und ergonomischen Stehtischen (elektrisch/manuell).'
+    icon: '🎯',
+    title: 'Fokus pur',
+    desc: 'Klimatisierte Räume, ergonomisches Mobiliar und Rückzugsorte für ungestörtes Deep Work.'
   },
   {
-    icon: '☕',
-    title: 'Voll ausgestattete Küche',
-    desc: 'Jura‑Kaffeevollautomat (Bohnen inkl.), Geschirrspüler, Mikrowelle, Ofen, Herd, Kühlschrank sowie Gewürze und Öle.'
+    icon: '📺',
+    title: 'Tech-Hub',
+    desc: 'Ein 98-Zoll-Screen für deinen nächsten Hackathon, Use-Case-Entwicklungen und Präsentationen.'
   },
   {
-    icon: '🌿',
-    title: 'Outdoor & Entspannung',
-    desc: 'Balkon mit Weinranken und ein ruhiger Gartensitzplatz für die Denkpause im Grünen.'
+    icon: '🎸',
+    title: 'AI Exchange Space',
+    desc: 'Networking ab 18:30 Uhr. Mit Jura-Kaffee, Lounge und einem Marshall-Amp für spontane Jam-Sessions. Hier leben wir den Garage Vibe!'
+  },
+  {
+    icon: '⚡',
+    title: 'Sitzungszimmer für AI Standoffs',
+    desc: 'Platz für 10 Personen im Stehen oder 6 im Sitzen. Höhenverstellbarer Tisch, 55-Zoll-Flatscreen und Workshopwall. Für Einzelbüro-Mieter kostenlos, für Shared-Space-Mieter CHF 25.–/Stunde.'
+  },
+  {
+    icon: '🍳',
+    title: 'Gemeinschaftsküche',
+    desc: 'Neuwertig, mit Stehtisch für den gemeinsamen Austausch und fantastischer Aussicht auf die Bergwelt.'
   },
   {
     icon: '📍',
-    title: 'Lage Chur Nord',
-    desc: '300m zum Bahnhof, 200m zu Coop/Fust/Apotheke und nur 10m zum nächsten Restaurant.'
+    title: 'Top Lage',
+    desc: 'Direkt beim Autobahnanschluss Chur Nord. Bushaltestelle (50 m), Migros und der Rhein als Naherholungsgebiet um die Ecke.'
   },
 ];
 ---
 
-<section class="ausstattung section" id="ausstattung">
+<section class="infra section" id="ausstattung">
   <div class="container">
-    <p class="label">Ausstattung</p>
+    <p class="label">Die Infrastruktur</p>
     <h2 class="section-title">Alles für deinen Workflow</h2>
+    <p class="section-sub">Unsere Räumlichkeiten im Dachgeschoss verbinden innovatives Design &ndash; Sichtbeton, Echtholz-Parkett &ndash; mit absoluter Funktionalität.</p>
     <div class="features-grid">
       {features.map(f => (
         <div class="feature-card">
@@ -36,14 +47,14 @@ const features = [
         </div>
       ))}
     </div>
-    <div class="ausstattung-image">
-      <img src="/images/kitchen.jpg" alt="FactorAI Küche und Gemeinschaftsbereich" />
+    <div class="infra-image">
+      <img src="/images/kitchen.jpg" alt="FactorAI Gemeinschaftsküche mit Aussicht" />
     </div>
   </div>
 </section>
 
 <style>
-  .ausstattung {
+  .infra {
     background: var(--color-gray-100);
   }
   .label {
@@ -59,11 +70,19 @@ const features = [
     text-align: center;
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 56px;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-gray-500);
+    max-width: 560px;
+    margin: 0 auto 56px;
+    line-height: 1.7;
   }
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-bottom: 56px;
   }
@@ -72,7 +91,7 @@ const features = [
     border: 1px solid var(--color-gray-200);
     border-radius: var(--radius-md);
     padding: 32px 24px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .feature-card:hover {
     transform: translateY(-2px);
@@ -93,11 +112,11 @@ const features = [
     line-height: 1.7;
     color: var(--color-gray-500);
   }
-  .ausstattung-image {
+  .infra-image {
     border-radius: var(--radius-lg);
     overflow: hidden;
   }
-  .ausstattung-image img {
+  .infra-image img {
     width: 100%;
     height: 360px;
     object-fit: cover;
@@ -108,6 +127,6 @@ const features = [
   @media (max-width: 768px) {
     .section-title { font-size: 28px; }
     .features-grid { grid-template-columns: 1fr; }
-    .ausstattung-image img { height: 240px; }
+    .infra-image img { height: 240px; }
   }
 </style>

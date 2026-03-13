@@ -5,9 +5,22 @@
   <div class="container">
     <div class="form-grid">
       <div class="form-intro">
-        <p class="label">Mietgesuch</p>
-        <h2>Werde Teil von FactorAI</h2>
-        <p class="form-desc">Wir suchen Neuzugang, der zu unserem Tech‑Spirit passt. Erzähl uns von dir und deinem Business.</p>
+        <p class="label">Lass uns die Zukunft bauen</p>
+        <h2>Jetzt Besichtigung vereinbaren</h2>
+        <p class="form-desc">Suchst du nicht nur ein Büro, sondern ein echtes Netzwerk aus Gleichgesinnten? Dann bist du bei uns genau richtig. Komm vorbei, schau dir die frisch renovierte Location an und erzähl uns von deinen Projekten.</p>
+        <div class="contact-details">
+          <p class="contact-person">Dein Ansprechpartner: <strong>Sebastian Früh</strong></p>
+          <div class="contact-links">
+            <a href="mailto:FactorAIchur@pm.me" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+              FactorAIchur@pm.me
+            </a>
+            <a href="https://instagram.com/FactorAI_chur" target="_blank" rel="noopener" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+              @FactorAI_chur
+            </a>
+          </div>
+        </div>
         <div class="form-image">
           <img src="/images/hallway-meetingroom.jpg" alt="FactorAI Eingangsbereich" />
         </div>
@@ -15,7 +28,7 @@
       <form class="mietgesuch-form" name="mietgesuch" method="POST" data-netlify="true" netlify action="/erfolg">
         <input type="hidden" name="form-name" value="mietgesuch" />
         <div class="form-group">
-          <label for="name">Name & Unternehmen</label>
+          <label for="name">Name &amp; Unternehmen</label>
           <input type="text" id="name" name="name" placeholder="Max Muster, Muster AI GmbH" required />
         </div>
         <div class="form-group">
@@ -28,12 +41,12 @@
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="workspace">Wunsch‑Workspace</label>
+            <label for="workspace">Wunsch-Workspace</label>
             <select id="workspace" name="workspace">
               <option value="">Bitte wählen...</option>
-              <option value="fix-desk">Fix‑Desk im 8er‑Büro (199 CHF)</option>
-              <option value="montalin">Einzelbüro Montalin (ab 599 CHF)</option>
-              <option value="oberland">Einzelbüro Oberland (ab 689 CHF)</option>
+              <option value="shared-space">Shared Space / Fix-Desk (CHF 199.–)</option>
+              <option value="montalin">Einzelbüro Montalin (CHF 719.–)</option>
+              <option value="oberland">Einzelbüro Oberland 1 (CHF 709.–)</option>
             </select>
           </div>
           <div class="form-group">
@@ -74,7 +87,38 @@
     font-size: 16px;
     line-height: 1.7;
     color: var(--color-gray-500);
+    margin-bottom: 24px;
+  }
+  .contact-details {
     margin-bottom: 32px;
+  }
+  .contact-person {
+    font-size: 15px;
+    color: var(--color-gray-500);
+    margin-bottom: 12px;
+  }
+  .contact-person strong {
+    color: var(--color-black);
+  }
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+    transition: opacity 0.2s;
+  }
+  .contact-link:hover {
+    opacity: 0.8;
+  }
+  .contact-link svg {
+    flex-shrink: 0;
   }
   .form-image {
     border-radius: var(--radius-md);

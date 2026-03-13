@@ -1,37 +1,40 @@
 ---
-const testimonials = [
-  { quote: 'Seit ich bei FactorAI bin, hat sich mein Netzwerk komplett verändert. Der Austausch mit den anderen Tech‑Unternehmern ist unbezahlbar.', name: 'Marco T.', role: 'IT Consultant' },
-  { quote: 'Endlich ein Workspace, der zu meinem Workflow passt. Die Ruhe im Einzelbüro kombiniert mit der Community in der Küche: perfekt.', name: 'Lena K.', role: 'Marketing Strategin' },
-  { quote: 'Die All‑Inclusive‑Miete macht es so einfach. Einziehen und loslegen, keine versteckten Kosten.', name: 'David R.', role: 'KI Entwickler' },
-  { quote: '300 Meter zum Bahnhof, Jura‑Kaffee inklusive und Blick auf die Berge. Was will man mehr?', name: 'Sandra W.', role: 'Freelance Designerin' },
-];
 ---
 
-<section class="testimonials section">
+<section class="about section" id="about">
   <div class="container">
-    <p class="label">Stimmen</p>
-    <h2 class="testimonials-title">Was unsere Community sagt</h2>
-    <div class="testimonials-grid">
-      {testimonials.map(t => (
-        <div class="testimonial-card">
-          <div class="quote-mark">"</div>
-          <p class="quote">{t.quote}</p>
-          <div class="author">
-            <div class="author-avatar">{t.name[0]}</div>
-            <div>
-              <p class="author-name">{t.name}</p>
-              <p class="author-role">{t.role}</p>
-            </div>
+    <div class="about-grid">
+      <div class="about-content">
+        <p class="label">Über FactorAI</p>
+        <h2>Von Machern für Macher</h2>
+        <p class="about-text">Hinter FactorAI steht ein starkes Bekenntnis zum Wirtschaftsstandort Graubünden. Gründer <strong>Sebastian Früh</strong> hat seine Professur an der Fachhochschule Graubünden bewusst aufgegeben, um mit FactorAI und seinem eigenen KI-Unternehmen AIgent vollständig auf die unternehmerische Seite zu wechseln.</p>
+        <p class="about-text">Unser Ziel: Jungen, innovativen Köpfen der Region das bestmögliche Ökosystem zu bieten, um Wissen direkt in Taten umzusetzen.</p>
+        <div class="about-founder">
+          <div class="founder-avatar">SF</div>
+          <div>
+            <p class="founder-name">Sebastian Früh</p>
+            <p class="founder-role">Gründer, FactorAI</p>
           </div>
         </div>
-      ))}
+      </div>
+      <div class="about-image">
+        <img src="/images/lounge.jpg" alt="FactorAI Lounge und Gemeinschaftsbereich" />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .about {
+    background: var(--color-white);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
   .label {
-    text-align: center;
     font-size: 13px;
     font-weight: 600;
     color: var(--color-primary);
@@ -39,65 +42,66 @@ const testimonials = [
     letter-spacing: 2px;
     margin-bottom: 12px;
   }
-  .testimonials-title {
-    text-align: center;
+  .about-content h2 {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 56px;
-  }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-  .testimonial-card {
-    background: var(--color-gray-100);
-    border-radius: var(--radius-md);
-    padding: 36px;
-    position: relative;
-  }
-  .quote-mark {
-    font-size: 64px;
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1;
-    margin-bottom: 8px;
-    opacity: 0.4;
-  }
-  .quote {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--color-black);
     margin-bottom: 24px;
   }
-  .author {
+  .about-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-gray-500);
+    margin-bottom: 16px;
+  }
+  .about-text strong {
+    color: var(--color-black);
+    font-weight: 600;
+  }
+  .about-founder {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-gray-200);
   }
-  .author-avatar {
-    width: 40px;
-    height: 40px;
+  .founder-avatar {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: var(--color-primary);
-    color: var(--color-dark);
+    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
     font-size: 16px;
+    flex-shrink: 0;
   }
-  .author-name {
-    font-size: 14px;
+  .founder-name {
+    font-size: 15px;
     font-weight: 600;
     color: var(--color-black);
   }
-  .author-role {
+  .founder-role {
     font-size: 13px;
     color: var(--color-gray-500);
   }
+  .about-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .about-image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+  }
   @media (max-width: 768px) {
-    .testimonials-title { font-size: 28px; }
-    .testimonials-grid { grid-template-columns: 1fr; }
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .about-content h2 { font-size: 28px; }
+    .about-image img { height: 300px; }
   }
 </style>
