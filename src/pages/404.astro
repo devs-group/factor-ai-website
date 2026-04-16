@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="404 – Seite nicht gefunden | FactorAI" description="Die gesuchte Seite existiert nicht. Zurück zu FactorAI – Coworking & Einzelbüro am Stelleweg 4 in Chur Nord." noindex={true}>
+  <Header />
+  <main class="notfound">
+    <div class="container">
+      <p class="eyebrow">404</p>
+      <h1>Diese Seite existiert nicht.</h1>
+      <p class="lead">Wahrscheinlich ein alter Link. Zurück zur Startseite oder direkt zu den Workspace-Optionen.</p>
+      <div class="actions">
+        <a href="/" class="btn btn-primary">Zur Startseite</a>
+        <a href="/#pricing" class="btn btn-outline-light">Workspace-Optionen</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .notfound {
+    background: var(--color-dark);
+    color: rgba(255,255,255,0.7);
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 24px;
+  }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .notfound h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+  .lead {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+</style>

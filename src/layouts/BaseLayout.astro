@@ -1,10 +1,10 @@
 ---
 const {
-  title = "FactorAI | Der inCHURbation Space for Makers in Chur Nord",
-  description = "FactorAI ist der Maker Place am Stelleweg 4 in Chur Nord für KI-affine Unternehmer/innen, IT-Consultants und Tech-Visionäre. Fix-Desks, Einzelbüros und eine exklusive Tech-Community auf 210 m².",
+  title = "Coworking Chur & Einzelbüro am Stelleweg 4 | FactorAI",
+  description = "Coworking & Einzelbüros in Chur Nord: Fix-Desk ab CHF 249.–, Einzelbüro Premium ab CHF 789.–. Maker Place für KI-affine Unternehmer/innen auf 210 m².",
   canonical,
   noindex = false,
-  ogImage = "/images/coworking-space.jpg",
+  ogImage = "/images/founder-signature-wall.jpg",
   schema,
 } = Astro.props;
 
@@ -13,10 +13,11 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = new URL(ogImage, siteUrl).href;
 ---
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0C0C12" />
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
@@ -39,9 +40,12 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
   <!-- Geo / Local -->
   <meta name="geo.region" content="CH-GR" />
   <meta name="geo.placename" content="Chur" />
+  <meta name="ICBM" content="46.8618, 9.5215" />
   <link rel="icon" type="image/svg+xml" href="/images/factorai-logo.svg" />
+  <link rel="apple-touch-icon" href="/images/factorai-logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="image" href="/images/founder-signature-wall.jpg" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>

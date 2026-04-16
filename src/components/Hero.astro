@@ -2,27 +2,40 @@
 ---
 
 <section class="hero" id="hero">
+  <div class="hero-ambient" aria-hidden="true"></div>
   <div class="hero-inner container">
     <div class="hero-content">
-      <p class="hero-label">Deep Work · Garage Vibe · Maker Community</p>
-      <h1>Der inCHURbation Space for Makers.</h1>
+      <p class="hero-label"><span class="hero-dot"></span>Deep Work &middot; Garage Vibe &middot; Maker Community</p>
+      <h1>Der in<span class="hero-accent">CHUR</span>bation Space <em>for&nbsp;Makers.</em></h1>
+      <p class="hero-kicker">Coworking &amp; Einzelbüro in Chur Nord &middot; Stelleweg 4</p>
       <p class="hero-sub">Deep Work meets Garage Vibe im neuen Epizentrum der Churer Tech-Szene. Exklusiv für KI-affine Unternehmer/innen, IT-Consultants und Tech-Visionäre.</p>
       <div class="hero-actions">
-        <a href="#mietgesuch" class="btn btn-primary">Besichtigung vereinbaren</a>
+        <a href="#mietgesuch" class="btn btn-primary">Besichtigung vereinbaren <span aria-hidden="true">&rarr;</span></a>
         <a href="#pricing" class="btn btn-outline-light">Workspace-Optionen</a>
       </div>
-      <div class="hero-badge">
-        <span class="badge-icon">&#x1F525;</span>
-        <span>Fix-Desk ab CHF&nbsp;249.&ndash;/Monat &middot; Einzelbüro Premium ab CHF&nbsp;789.&ndash;</span>
+      <div class="hero-pricing">
+        <div class="hero-pricing-item">
+          <span class="hero-pricing-label">Fix-Desk</span>
+          <span class="hero-pricing-value">CHF 249.&ndash; <span>/Monat</span></span>
+        </div>
+        <div class="hero-pricing-divider" aria-hidden="true"></div>
+        <div class="hero-pricing-item">
+          <span class="hero-pricing-label">Einzelbüro Premium</span>
+          <span class="hero-pricing-value">CHF 789.&ndash; <span>/Monat</span></span>
+        </div>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-img-main">
-        <img src="/images/founder-signature-wall.jpg" alt="Sebastian Früh vor der FactorAI Signature Wall" width="600" height="300" loading="eager" />
+        <img src="/images/founder-signature-wall.jpg" alt="Sebastian Früh vor der FactorAI Signature Wall" width="600" height="380" loading="eager" fetchpriority="high" />
+        <div class="hero-img-caption">
+          <span class="caption-dot" aria-hidden="true"></span>
+          <span>Sebastian Früh &middot; Gründer</span>
+        </div>
       </div>
       <div class="hero-img-grid">
-        <img src="/images/einzelbuero-oberland.jpg" alt="Einzelbüro Oberland mit Bergblick" width="294" height="160" loading="eager" />
-        <img src="/images/meeting-room-mountains.jpg" alt="Meeting-Raum mit Panoramafenstern" width="294" height="160" loading="eager" />
+        <img src="/images/einzelbuero-oberland.jpg" alt="Einzelbüro Oberland mit Bergblick in Chur Nord" width="294" height="160" loading="lazy" decoding="async" />
+        <img src="/images/meeting-room-mountains.jpg" alt="Meeting-Raum mit Panoramafenstern auf die Bündner Alpen" width="294" height="160" loading="lazy" decoding="async" />
       </div>
     </div>
   </div>
@@ -30,73 +43,184 @@
 
 <style>
   .hero {
+    position: relative;
     background: var(--color-dark);
-    padding: 80px 24px 100px;
+    padding: 88px 24px 112px;
     overflow: hidden;
   }
+  .hero-ambient {
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+    background:
+      radial-gradient(40% 50% at 80% 20%, rgba(9,138,203,0.18) 0%, transparent 60%),
+      radial-gradient(30% 40% at 10% 80%, rgba(9,138,203,0.08) 0%, transparent 60%);
+    z-index: 0;
+  }
   .hero-inner {
+    position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 72px;
     align-items: center;
   }
   .hero-label {
-    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--color-primary);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    opacity: 0.9;
+    letter-spacing: 2.5px;
+    margin-bottom: 24px;
+  }
+  .hero-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(9,138,203,0.18);
+    animation: heroPulse 2.2s cubic-bezier(.4,0,.6,1) infinite;
+  }
+  @keyframes heroPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(9,138,203,0.18); }
+    50% { box-shadow: 0 0 0 8px rgba(9,138,203,0.0); }
   }
   h1 {
-    font-size: 52px;
+    font-size: clamp(40px, 5.2vw, 60px);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
     color: var(--color-white);
     margin-bottom: 24px;
+    max-width: 14ch;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+  }
+  .hero-accent {
+    color: var(--color-primary);
+  }
+  .hero-kicker {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
   }
   .hero-sub {
     font-size: 17px;
     color: rgba(255,255,255,0.6);
-    margin-bottom: 32px;
-    max-width: 460px;
-    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+    line-height: 1.65;
   }
   .hero-actions {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 28px;
+    margin-bottom: 40px;
   }
-  .hero-badge {
+  .btn .hero-accent,
+  .btn span[aria-hidden="true"] {
+    transition: transform 0.25s cubic-bezier(.2,.8,.2,1);
+    display: inline-block;
+  }
+  .btn:hover span[aria-hidden="true"] {
+    transform: translateX(3px);
+  }
+  .hero-pricing {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(9,138,203,0.12);
-    border: 1px solid rgba(9,138,203,0.25);
-    border-radius: var(--radius-full);
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-primary);
+    align-items: stretch;
+    gap: 24px;
+    padding: 16px 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.02);
+    backdrop-filter: blur(6px);
   }
-  .badge-icon {
+  .hero-pricing-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero-pricing-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    color: rgba(255,255,255,0.45);
+  }
+  .hero-pricing-value {
     font-size: 16px;
+    font-weight: 600;
+    color: var(--color-white);
+    font-variant-numeric: tabular-nums;
+  }
+  .hero-pricing-value span {
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+    font-size: 13px;
+    margin-left: 2px;
+  }
+  .hero-pricing-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.08);
   }
   .hero-visual {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
   .hero-img-main {
+    position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-img-main::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(12,12,18,0.55) 100%);
+    pointer-events: none;
+    z-index: 1;
   }
   .hero-img-main img {
     width: 100%;
-    height: 300px;
+    height: 420px;
     object-fit: cover;
+    object-position: center 30%;
+  }
+  .hero-img-caption {
+    position: absolute;
+    left: 20px;
+    bottom: 18px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: var(--radius-full);
+    background: rgba(12,12,18,0.55);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.02em;
+  }
+  .caption-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
   }
   .hero-img-grid {
     display: grid;
@@ -105,24 +229,25 @@
   }
   .hero-img-grid img {
     width: 100%;
-    height: 160px;
+    height: 170px;
     object-fit: cover;
     border-radius: var(--radius-md);
   }
   @media (max-width: 1024px) {
-    h1 { font-size: 40px; }
+    .hero-img-main img { height: 360px; }
   }
   @media (max-width: 768px) {
+    .hero { padding: 56px 16px 72px; }
     .hero-inner {
       grid-template-columns: 1fr;
       gap: 40px;
     }
-    h1 { font-size: 32px; }
-    .hero-img-main img { height: 220px; }
-    .hero-img-grid img { height: 120px; }
-    .hero-badge {
-      font-size: 13px;
-      padding: 8px 16px;
+    .hero-pricing {
+      flex-wrap: wrap;
+      gap: 16px;
     }
+    .hero-pricing-divider { display: none; }
+    .hero-img-main img { height: 280px; }
+    .hero-img-grid img { height: 130px; }
   }
 </style>

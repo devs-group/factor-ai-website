@@ -15,13 +15,49 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": "Organization",
+      "@id": "https://factor-ai.ch/#org",
+      "name": "FactorAI",
+      "url": "https://factor-ai.ch",
+      "logo": "https://factor-ai.ch/images/factorai-logo.svg",
+      "email": "FactorAIchur@pm.me",
+      "sameAs": ["https://instagram.com/FactorAI_chur"],
+      "founder": { "@id": "https://factor-ai.ch/#sebastian" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://factor-ai.ch/#website",
+      "url": "https://factor-ai.ch",
+      "name": "FactorAI",
+      "inLanguage": "de-CH",
+      "publisher": { "@id": "https://factor-ai.ch/#org" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://factor-ai.ch/#sebastian",
+      "name": "Sebastian Früh",
+      "jobTitle": "Gründer",
+      "worksFor": { "@id": "https://factor-ai.ch/#org" },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Fachhochschule Graubünden",
+        "url": "https://www.fhgr.ch"
+      },
+      "knowsAbout": ["Künstliche Intelligenz", "Coworking", "Unternehmertum", "IT-Consulting"],
+      "image": "https://factor-ai.ch/images/founder-signature-wall.jpg"
+    },
+    {
+      "@type": ["LocalBusiness", "CoworkingSpace"],
       "@id": "https://factor-ai.ch/#business",
       "name": "FactorAI",
       "description": "FactorAI ist der Maker Place am Stelleweg 4 in Chur Nord für KI-affine Unternehmer/innen, IT-Consultants und Tech-Visionäre. Fix-Desks, Einzelbüros und eine exklusive Tech-Community auf 210 m².",
       "url": "https://factor-ai.ch",
-      "image": "https://factor-ai.ch/images/coworking-space.jpg",
-      "telephone": "",
+      "image": [
+        "https://factor-ai.ch/images/founder-signature-wall.jpg",
+        "https://factor-ai.ch/images/meeting-room-mountains.jpg",
+        "https://factor-ai.ch/images/einzelbuero-oberland.jpg"
+      ],
+      "logo": "https://factor-ai.ch/images/factorai-logo.svg",
       "email": "FactorAIchur@pm.me",
       "address": {
         "@type": "PostalAddress",
@@ -36,20 +72,77 @@ const schema = {
         "latitude": 46.8618,
         "longitude": 9.5215
       },
+      "hasMap": "https://www.google.com/maps?q=Stelleweg+4,+7000+Chur",
+      "areaServed": [
+        { "@type": "City", "name": "Chur" },
+        { "@type": "AdministrativeArea", "name": "Graubünden" }
+      ],
+      "knowsAbout": ["Coworking Chur", "Einzelbüro Chur", "Büro mieten Chur", "KI Community", "Deep Work"],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "08:00",
         "closes": "22:00"
       },
-      "priceRange": "CHF 249 – CHF 789 / Monat",
-      "founder": {
-        "@type": "Person",
-        "name": "Sebastian Früh"
-      },
-      "sameAs": [
-        "https://instagram.com/FactorAI_chur"
+      "priceRange": "CHF",
+      "founder": { "@id": "https://factor-ai.ch/#sebastian" },
+      "sameAs": ["https://instagram.com/FactorAI_chur"],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Fix-Desk #sharedoffice",
+          "description": "Fester Schreibtisch im Gemeinschaftsbüro, monatlich kündbar.",
+          "price": "249",
+          "priceCurrency": "CHF",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "249",
+            "priceCurrency": "CHF",
+            "unitCode": "MON",
+            "referenceQuantity": { "@type": "QuantitativeValue", "value": "1", "unitCode": "MON" }
+          },
+          "availability": "https://schema.org/InStock",
+          "url": "https://factor-ai.ch/#pricing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Einzelbüro Premium",
+          "description": "Voll möbliertes privates Einzelbüro (Oberland 1 & 2 bis 2 Personen, Montalin 3 bis 3 Personen), alle 3 Monate kündbar.",
+          "price": "789",
+          "priceCurrency": "CHF",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "789",
+            "priceCurrency": "CHF",
+            "unitCode": "MON"
+          },
+          "availability": "https://schema.org/InStock",
+          "url": "https://factor-ai.ch/#pricing"
+        }
       ]
+    },
+    {
+      "@type": "Event",
+      "@id": "https://factor-ai.ch/#opening",
+      "name": "FactorAI Eröffnung",
+      "startDate": "2026-06-01",
+      "endDate": "2026-06-30",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "FactorAI",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Stelleweg 4",
+          "addressLocality": "Chur",
+          "postalCode": "7000",
+          "addressCountry": "CH"
+        }
+      },
+      "image": "https://factor-ai.ch/images/founder-signature-wall.jpg",
+      "description": "Offizielle Eröffnung des FactorAI Maker Place in Chur Nord.",
+      "organizer": { "@id": "https://factor-ai.ch/#org" }
     },
     {
       "@type": "FAQPage",
