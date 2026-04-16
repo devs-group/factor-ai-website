@@ -12,80 +12,159 @@ const faqs = [
 
 <section class="faq section section-dark" id="faq">
   <div class="container">
-    <p class="label">FAQ</p>
-    <h2 class="faq-title">Häufig gestellte Fragen</h2>
+    <div class="faq-head">
+      <p class="label">Häufige Fragen</p>
+      <h2 class="faq-title">Alles, was du wissen willst.</h2>
+    </div>
     <div class="faq-list">
-      {faqs.map(faq => (
-        <details class="faq-item">
+      {faqs.map((faq, i) => (
+        <details class="faq-item" name="faq">
           <summary class="faq-question">
-            <span>{faq.q}</span>
-            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <span class="faq-index">{String(i + 1).padStart(2, '0')}</span>
+            <span class="faq-q-text">{faq.q}</span>
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </summary>
-          <p class="faq-answer">{faq.a}</p>
+          <div class="faq-answer">
+            <p>{faq.a}</p>
+          </div>
         </details>
       ))}
     </div>
+
+    <aside class="faq-still">
+      <div>
+        <p class="faq-still-eyebrow">Keine Antwort gefunden?</p>
+        <p class="faq-still-text">Schreib direkt an Sebastian &ndash; <a href="mailto:FactorAIchur@pm.me">FactorAIchur@pm.me</a></p>
+      </div>
+      <a href="#mietgesuch" class="btn btn-primary">Besichtigung anfragen <span aria-hidden="true">&rarr;</span></a>
+    </aside>
   </div>
 </section>
 
 <style>
-  .label {
+  .faq-head {
     text-align: center;
-    font-size: 13px;
+    max-width: 640px;
+    margin: 0 auto 48px;
+  }
+  .label {
+    font-size: 12px;
     font-weight: 600;
     color: var(--color-primary);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
   }
   .faq-title {
-    text-align: center;
-    font-size: 40px;
+    font-size: clamp(30px, 4vw, 40px);
     font-weight: 700;
-    margin-bottom: 56px;
+    letter-spacing: -0.03em;
   }
   .faq-list {
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
   .faq-item {
-    border: 1px solid var(--color-dark-border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--color-dark-surface);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.2s ease;
+  }
+  .faq-item[open] {
+    background: linear-gradient(90deg, rgba(9,138,203,0.04), transparent 60%);
   }
   .faq-question {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 20px 24px;
+    gap: 18px;
+    padding: 22px 4px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 500;
     color: var(--color-white);
     list-style: none;
+    transition: color 0.2s ease;
   }
-  .faq-question::-webkit-details-marker {
-    display: none;
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question:hover {
+    color: var(--color-primary);
+  }
+  .faq-index {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.35);
+    font-variant-numeric: tabular-nums;
+    min-width: 28px;
+  }
+  .faq-item[open] .faq-index {
+    color: var(--color-primary);
+  }
+  .faq-q-text {
+    letter-spacing: -0.005em;
   }
   .faq-chevron {
     flex-shrink: 0;
-    transition: transform 0.2s;
-    color: var(--color-primary);
+    color: rgba(255,255,255,0.5);
+    transition: transform 0.3s cubic-bezier(.2,.8,.2,1), color 0.2s ease;
   }
   .faq-item[open] .faq-chevron {
-    transform: rotate(180deg);
+    transform: rotate(45deg);
+    color: var(--color-primary);
   }
   .faq-answer {
-    padding: 0 24px 20px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.5);
+    overflow: hidden;
+    padding: 0 4px;
   }
-  @media (max-width: 768px) {
-    .faq-title { font-size: 28px; }
+  .faq-answer p {
+    padding: 0 46px 24px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.6);
+    max-width: 68ch;
+  }
+  .faq-still {
+    max-width: 760px;
+    margin: 56px auto 0;
+    padding: 28px 32px;
+    border: 1px solid rgba(9,138,203,0.2);
+    border-radius: var(--radius-md);
+    background: rgba(9,138,203,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .faq-still-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+  }
+  .faq-still-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+  }
+  .faq-still-text a {
+    color: var(--color-white);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    transition: border-color 0.2s ease;
+  }
+  .faq-still-text a:hover { border-color: var(--color-primary); }
+  @media (max-width: 640px) {
+    .faq-question {
+      padding: 18px 4px;
+      font-size: 15.5px;
+      gap: 12px;
+    }
+    .faq-answer p {
+      padding: 0 0 18px 46px;
+    }
+    .faq-still {
+      padding: 22px;
+    }
   }
 </style>

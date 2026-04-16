@@ -5,8 +5,16 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Datenschutzerklärung | FactorAI – Maker Place in Chur Nord"
-  description="Datenschutzerklärung von FactorAI. Informationen zur Erhebung und Verarbeitung personenbezogener Daten auf factor-ai.ch."
+  title="Datenschutz | FactorAI Coworking Chur"
+  description="Datenschutzerklärung von FactorAI. Erhebung und Verarbeitung personenbezogener Daten auf factor-ai.ch."
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://factor-ai.ch/" },
+      { "@type": "ListItem", "position": 2, "name": "Datenschutz", "item": "https://factor-ai.ch/datenschutz" }
+    ]
+  }}
 >
   <Header />
 

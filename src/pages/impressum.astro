@@ -5,8 +5,16 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Impressum | FactorAI – Maker Place in Chur Nord"
-  description="Impressum und Angaben gemäss Art. 3 Abs. 1 UWG für FactorAI, den Maker Place am Stelleweg 4 in Chur Nord."
+  title="Impressum | FactorAI Coworking Chur"
+  description="Impressum und Angaben gemäss Art. 3 Abs. 1 UWG für FactorAI, Coworking & Einzelbüro am Stelleweg 4 in Chur Nord."
+  schema={{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://factor-ai.ch/" },
+      { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://factor-ai.ch/impressum" }
+    ]
+  }}
 >
   <Header />
 
