@@ -1,9 +1,9 @@
 ---
 const navLinks = [
-  { text: 'Community', href: '#community' },
-  { text: 'Workspaces', href: '#pricing' },
-  { text: 'Ausstattung', href: '#ausstattung' },
-  { text: 'FAQ', href: '#faq' },
+  { text: 'Community', href: '/#community' },
+  { text: 'Workspaces', href: '/#pricing' },
+  { text: 'Ausstattung', href: '/#ausstattung' },
+  { text: 'FAQ', href: '/#faq' },
 ];
 ---
 
@@ -17,7 +17,7 @@ const navLinks = [
         <a href={link.href} class="nav-link">{link.text}</a>
       ))}
     </nav>
-    <a href="#mietgesuch" class="btn btn-primary nav-cta">Workspace anfragen</a>
+    <a href="/#mietgesuch" class="btn btn-primary nav-cta">Workspace anfragen</a>
     <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" id="hamburger">
       <span></span>
       <span></span>
@@ -28,7 +28,7 @@ const navLinks = [
     {navLinks.map(link => (
       <a href={link.href} class="nav-link-mobile">{link.text}</a>
     ))}
-    <a href="#mietgesuch" class="btn btn-primary" style="width: 100%; justify-content: center;">Workspace anfragen</a>
+    <a href="/#mietgesuch" class="btn btn-primary" style="width: 100%; justify-content: center;">Workspace anfragen</a>
   </nav>
 </header>
 

@@ -8,20 +8,22 @@
 ## 2. Unsere Community: Innovation & Fokus
 "Wir sind eine Gemeinschaft aus KI-affinen Unternehmern und Unternehmerinnen. Bei uns triffst du auf IT-Consultants mit internationalem Fokus und Marketing-Profis, die die digitale Zukunft gestalten. Wir schätzen Ruhe für Deep Work, aber auch den Austausch an der Jura-Kaffeemaschine."
 
-## 3. Dein Workspace: Drei Wege zum Erfolg
-Wähle die Option, die am besten zu deinem Business und deinem Workflow passt. Alle Preise verstehen sich als All-Inclusive-Miete – du musst dich also nicht um Strom, Internet, Reinigung oder Möbel kümmern.
+## 3. Dein Workspace: Zwei Wege zum Erfolg
+Rundum-sorglos-Miete – Strom, Nebenkosten, Highspeed-WiFi, Reinigung der Gemeinschaftsflächen und hochwertiges Mobiliar immer inklusive.
 
-### Der Fix-Desk im 8er-Büro
-Für alle, die die Dynamik einer Gemeinschaft schätzen: Du erhältst deinen eigenen, festen Schreibtisch mit bequemem Bürostuhl und einem abschliessbaren Korpus in unserem grosszügigen Gemeinschaftsbüro. Dieser Workspace ist ideal für den Austausch mit anderen KI-Unternehmern und bietet maximale Flexibilität mit einer Kündigungsfrist von nur einem Monat.
-**Preis:** 199 CHF / Monat (netto) | Kaution: 1 Monatsmiete
+### Fix-Desk «#sharedoffice»
+Dein fester Schreibtisch im Gemeinschaftsbüro – ideal für Austausch, Networking und maximale Flexibilität.
+**Preis:** 249 CHF / Monat (monatlich kündbar)
 
-### Einzelbüro „Blick Montalin"
-Dein privates Hauptquartier für tiefen Fokus: Dieses voll möblierte Einzelbüro bietet dir die nötige Ruhe für Deep Work, inklusive Blick Richtung Montalin. Ausgestattet mit Tisch, Stehlampe und Stuhl, ist dieser Raum sofort bezugsbereit. Die Nutzung unseres kleinen Meeting-Rooms für diskrete Besprechungen ist hier bereits im Preis enthalten.
-**Preis:** Ab 599 CHF / Monat | Kündigungsfrist: 3 Monate | Kaution: 1 Monatsmiete
+### Einzelbüro Premium
+Oberland 1 & 2 (bis 2 Personen) · Montalin 3 (bis 3 Personen). Dein privates Hauptquartier für Deep Work, komplett möbliert mit inspirierender Aussicht in die Bündner Bergwelt.
+**Preis:** 789 CHF / Monat (alle 3 Monate kündbar)
 
-### Einzelbüro „Blick Oberland"
-Das Premium-Upgrade für dein Business: Unser grösstes Einzelbüro bietet dir viel Platz für deine Entfaltung und einen inspirierenden Ausblick Richtung Oberland. Wie alle unsere Workspaces ist es modern möbliert und bietet dir vollen Zugriff auf die gesamte Infrastruktur inklusive Meeting-Room-Nutzung. Perfekt für Unternehmer/innen, die Wert auf Repräsentation und Privatsphäre legen.
-**Preis:** Ab 689 CHF / Monat | Kündigungsfrist: 3 Monate | Kaution: 1 Monatsmiete
+### Immer inklusive
+- ✓ Höhenverstellbarer Tisch & ergonomischer Bürostuhl
+- ✓ Hochwertige Stehlampe & Highspeed-WiFi
+- ✓ Strom & Nebenkosten inklusive
+- ✓ Reinigung der Gemeinschaftsflächen (Küche/WCs)
 
 ## 4. Ausstattung: Alles für deinen Workflow
 - **Modernes Setup:** 77 m² mit Echtholz-Parkett, WLAN-Farblaser und ergonomischen Stehtischen (elektrisch/manuell).

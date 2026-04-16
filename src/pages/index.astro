@@ -10,9 +10,113 @@ import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://factor-ai.ch/#business",
+      "name": "FactorAI",
+      "description": "FactorAI ist der Maker Place am Stelleweg 4 in Chur Nord für KI-affine Unternehmer/innen, IT-Consultants und Tech-Visionäre. Fix-Desks, Einzelbüros und eine exklusive Tech-Community auf 210 m².",
+      "url": "https://factor-ai.ch",
+      "image": "https://factor-ai.ch/images/coworking-space.jpg",
+      "telephone": "",
+      "email": "FactorAIchur@pm.me",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Stelleweg 4",
+        "addressLocality": "Chur",
+        "postalCode": "7000",
+        "addressRegion": "GR",
+        "addressCountry": "CH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 46.8618,
+        "longitude": 9.5215
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "priceRange": "CHF 249 – CHF 789 / Monat",
+      "founder": {
+        "@type": "Person",
+        "name": "Sebastian Früh"
+      },
+      "sameAs": [
+        "https://instagram.com/FactorAI_chur"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist FactorAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FactorAI ist ein hochspezialisierter Maker Place in Chur Nord am Stelleweg 4. Auf 210 m² lichtdurchfluteter Dachgeschossfläche bieten wir Fix-Desks und private Einzelbüros für KI-affine Unternehmer/innen in einer exklusiven Tech-Community."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Für wen ist FactorAI geeignet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für KI-affine Unternehmer/innen, IT-Consultants, Freelancer und Tech-Teams, die einen professionellen Workspace mit Gleichgesinnten suchen. Wir setzen bewusst auf feste Arbeitsplätze statt anonyme Flex-Desks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist in der Miete enthalten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unser Rundum-sorglos-Paket ist immer inklusive: höhenverstellbarer Tisch, ergonomischer Bürostuhl, hochwertige Stehlampe, Highspeed-WiFi, Strom und Nebenkosten sowie die Reinigung der Gemeinschaftsflächen (Küche/WCs). Keine versteckten Kosten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kosten Fix-Desk und Einzelbüro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Fix-Desk im #sharedoffice kostet CHF 249.–/Monat und ist monatlich kündbar. Das Einzelbüro Premium (Oberland 1 & 2 für bis zu 2 Personen oder Montalin 3 für bis zu 3 Personen) kostet CHF 789.–/Monat und ist alle 3 Monate kündbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie flexibel sind die Verträge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Fix-Desk im #sharedoffice hat eine Kündigungsfrist von nur einem Monat. Die Einzelbüros Premium haben eine Kündigungsfrist von 3 Monaten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich eine Besichtigung machen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Natürlich! Nutze das Kontaktformular unten oder schreib uns direkt an FactorAIchur@pm.me. Wir zeigen dir gerne die Räumlichkeiten und stellen dich der Community vor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es Parkplätze?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Parkplätze können für CHF 99.–/Monat dazu gemietet werden. Die Lage direkt beim Autobahnanschluss Chur Nord ist auch mit ÖV bestens erreichbar (Bushaltestelle 50 m entfernt)."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
-<BaseLayout>
+<BaseLayout schema={schema}>
   <Header />
   <Hero />
   <Services />

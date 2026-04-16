@@ -4,10 +4,13 @@ const {
   description = "FactorAI ist der Maker Place am Stelleweg 4 in Chur Nord für KI-affine Unternehmer/innen, IT-Consultants und Tech-Visionäre. Fix-Desks, Einzelbüros und eine exklusive Tech-Community auf 210 m².",
   canonical,
   noindex = false,
+  ogImage = "/images/coworking-space.jpg",
+  schema,
 } = Astro.props;
 
 const siteUrl = "https://factor-ai.ch";
 const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL(ogImage, siteUrl).href;
 ---
 <!DOCTYPE html>
 <html lang="de">
@@ -18,16 +21,29 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalUrl} />
   {noindex && <meta name="robots" content="noindex, nofollow" />}
+  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="de_CH" />
   <meta property="og:site_name" content="FactorAI" />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+  <!-- Geo / Local -->
+  <meta name="geo.region" content="CH-GR" />
+  <meta name="geo.placename" content="Chur" />
   <link rel="icon" type="image/svg+xml" href="/images/factorai-logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body>
   <slot />
